@@ -7,7 +7,6 @@ This is a webpage for assigment LDCW6123-FUNDAMENTALS OF DIGITAL COMP
 - [About the Webpage](#about-the-webpage)
 - [Our Team](#our-team)
 - [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
