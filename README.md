@@ -24,12 +24,12 @@ Nexus is an IT service that delivers proactive, enterprise-grade IT management a
 
 | Member | Role & Responsibilities | Core Focus & Quote |
 | :--- | :--- | :--- |
-| **Tan Ye Jun** | **Chief Executive Officer (CEO)**<br>Leads enterprise vision, client partnerships, and strategic technology growth to ensure continuous reliability. | **Enterprise Growth & Strategy**<br>_"Empowering enterprise stability isn't just our mission—it's our commitment."_ |
-| **Hong Quan Hao** | **Chief Technology Officer (CTO)**<br>Oversees multi-cloud server infrastructure, network architecture blueprints, and scalable IT deployments. | **Cloud & Systems Architecture**<br>_"Resilient engineering bridges everyday operations with tomorrow's scalability."_ |
-| **Fan Chong Bao** | **Chief Information Security Officer (CISO)**<br>Directs threat intelligence, zero-trust network defenses, proactive vulnerability scanning, and disaster recovery. | **Cybersecurity & Threat Defense**<br>_"Uncompromising proactive security is the foundation of digital confidence."_ |
-| **Tan Khai Zhen** | **Operations & Helpdesk Manager**<br>Manages real-time SLA ticket pipelines, workstation provisioning, on-site technician dispatching, and rapid resolution. | **SLA Management & User Support**<br>_"Excellence in daily execution keeps our clients completely downtime-free."_ |
-| **Chang Yu Hang** | **Lead Cloud Solutions Architect**<br>Specializes in hybrid AWS/Azure cloud migration, SAN storage optimization, and SD-WAN site-to-site connectivity. | **Multi-Cloud & SD-WAN**<br>_"Scalable cloud architecture delivers agility without complexity."_ |
-| **Yong Xiang Yu** | **Senior Network & Systems Engineer**<br>Conducts high-density mesh Wi-Fi deployments, VLAN security segmentation, and 24/7 automated node monitoring. | **Network Performance & Monitoring**<br>_"High performance networks are built on precision and rock-solid design."_ |
+| **Tan Ye Jun** | **Chief Executive Officer (CEO)** |
+| **Hong Quan Hao** | **Chief Technology Officer (CTO)** | 
+| **Fan Chong Bao** | **Chief Information Security Officer (CISO)**| 
+| **Tan Khai Zhen** | **Operations & Helpdesk Manager**| 
+| **Chang Yu Hang** | **Lead Cloud Solutions Architect**| 
+| **Yong Xiang Yu** | **Senior Network & Systems Engineer** | 
 
 ## ✨ Key Features
 - **Manage IT Support and Helpdesk 
