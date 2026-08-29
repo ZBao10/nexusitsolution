@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus IT Solutions | Reliable Managed IT Services &amp; Tech Support</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            nexus: {
+              navy: '#0B132B',
+              dark: '#1C2541',
+              blue: '#3A506B',
+              electric: '#00F0FF',
+              accent: '#0066FF',
+              light: '#F4F7BE'
+            }
+          },
+          boxShadow: {
+            'neon': '0 0 15px rgba(0, 240, 255, 0.4)',
+            'neon-blue': '0 0 20px rgba(0, 102, 255, 0.5)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="min-h-screen flex flex-col justify-between selection:bg-nexus-electric selection:text-nexus-navy bg-nexus-navy">
+
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-24">
+        
+        <!-- Brand Logo (Enlarged) -->
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+          <img 
+            src="Test_ver-removebg-preview.png" 
+            alt="Nexus IT Support Logo" 
+            class="h-16 sm:h-20 w-auto object-contain transition-transform duration-200 hover:scale-105"
+            onerror="this.style.display='none'"
+          />
+          <span class="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
+            IT SUPPORT
+          </span>
+        </div>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <button onclick="navigateTo('home')" class="nav-btn text-sm font-semibold hover:text-nexus-electric transition-colors duration-200 text-nexus-electric" id="nav-home">Home</button>
+          <button onclick="navigateTo('about')" class="nav-btn text-sm font-semibold text-gray-300 hover:text-nexus-electric transition-colors duration-200" id="nav-about">About Us</button>
+          <button onclick="navigateTo('team')" class="nav-btn text-sm font-semibold text-gray-300 hover:text-nexus-electric transition-colors duration-200" id="nav-team">Our Team</button>
+          
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button onclick="navigateTo('services-overview')" class="nav-btn text-sm font-semibold text-gray-300 hover:text-nexus-electric transition-colors duration-200 flex items-center gap-1" id="nav-services">
+              <span>Services</span>
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-64 glass-card rounded-xl p-2 shadow-2xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 border border-slate-700/50">
+              <a href="#" onclick="navigateTo('service-helpdesk'); return false;" class="block px-4 py-3 rounded-lg hover:bg-nexus-navy/80 transition text-sm">
+                <div class="font-bold text-white flex items-center gap-2">
+                  <i data-lucide="headphones" class="w-4 h-4 text-nexus-electric"></i>
+                  <span>Helpdesk &amp; Support</span>
+                </div>
+                <div class="text-xs text-slate-400 mt-0.5">24/7 IT Troubleshooting</div>
+              </a>
+              <a href="#" onclick="navigateTo('service-cloud'); return false;" class="block px-4 py-3 rounded-lg hover:bg-nexus-navy/80 transition text-sm">
+                <div class="font-bold text-white flex items-center gap-2">
+                  <i data-lucide="cloud" class="w-4 h-4 text-nexus-electric"></i>
+                  <span>Cloud &amp; Network</span>
+                </div>
+                <div class="text-xs text-slate-400 mt-0.5">Servers, Wi-Fi &amp; Migration</div>
+              </a>
+              <a href="#" onclick="navigateTo('service-security'); return false;" class="block px-4 py-3 rounded-lg hover:bg-nexus-navy/80 transition text-sm">
+                <div class="font-bold text-white flex items-center gap-2">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-nexus-electric"></i>
+                  <span>Cybersecurity &amp; Backup</span>
+                </div>
+                <div class="text-xs text-slate-400 mt-0.5">Threat Protection &amp; Recovery</div>
+              </a>
+            </div>
+          </div>
+
+          <button onclick="navigateTo('pricing')" class="nav-btn text-sm font-semibold text-gray-300 hover:text-nexus-electric transition-colors duration-200" id="nav-pricing">SLA Plans</button>
+          <button onclick="navigateTo('calc')" class="nav-btn text-sm font-semibold text-gray-300 hover:text-nexus-electric transition-colors duration-200" id="nav-calc">
+            <span class="font-bold">IT</span> Calculator
+          </button>
+          <button onclick="navigateTo('contact')" class="nav-btn text-sm font-semibold text-gray-300 hover:text-nexus-electric transition-colors duration-200" id="nav-contact">Contact</button>
+        </nav>
+
+        <!-- CTA Header Button -->
+        <div class="hidden md:block">
+          <button onclick="navigateTo('contact')" class="px-5 py-2.5 rounded-xl bg-nexus-electric text-nexus-navy font-bold text-sm hover:shadow-neon hover:scale-[1.02] transition-all duration-200">
+            Get Tech Audit
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-white p-2">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+      <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-lg font-semibold hover:bg-nexus-dark text-white">Home</button>
+      <button onclick="navigateTo('about'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-lg font-semibold hover:bg-nexus-dark text-gray-300">About Us</button>
+      <button onclick="navigateTo('team'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-lg font-semibold hover:bg-nexus-dark text-gray-300">Our Team</button>
+      
+      <div class="pl-3 space-y-2 border-l-2 border-nexus-accent">
+        <span class="text-xs uppercase font-bold text-nexus-electric tracking-wider">Services</span>
+        <button onclick="navigateTo('service-helpdesk'); toggleMobileMenu()" class="block w-full text-left py-1.5 text-sm text-slate-300 hover:text-white">Managed Support &amp; Helpdesk</button>
+        <button onclick="navigateTo('service-cloud'); toggleMobileMenu()" class="block w-full text-left py-1.5 text-sm text-slate-300 hover:text-white">Network &amp; Cloud Infrastructure</button>
+        <button onclick="navigateTo('service-security'); toggleMobileMenu()" class="block w-full text-left py-1.5 text-sm text-slate-300 hover:text-white">Cybersecurity &amp; Data Backup</button>
+      </div>
+
+      <button onclick="navigateTo('pricing'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-lg font-semibold hover:bg-nexus-dark text-gray-300">SLA Plans</button>
+      <button onclick="navigateTo('calc'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-lg font-semibold hover:bg-nexus-dark text-gray-300">IT Cost Calculator</button>
+      <button onclick="navigateTo('contact'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-lg font-semibold hover:bg-nexus-dark text-gray-300">Contact</button>
+    </div>
+  </header>
+
+  <!-- Main Content Dynamic Container -->
+  <main class="pt-28 pb-16 flex-grow">
+    
+    <!-- SECTION: HOME / HERO -->
+    <div id="page-home" class="page-section">
+      <section class="relative pt-12 pb-20 overflow-hidden bg-gradient-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border border-nexus-electric/30 text-nexus-electric text-xs sm:text-sm font-semibold">
+                <span class="w-2 h-2 rounded-full bg-nexus-electric animate-ping"></span>
+                <span>Premier Enterprise IT Services in Cyberjaya &amp; Beyond</span>
+              </div>
+              
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-white">
+                Zero Downtime. Total Security. Enterprise IT Support.
+              </h1>
+              
+              <p class="text-base sm:text-lg text-slate-300 font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                We manage your IT infrastructure, protect your network, and deliver 24/7 technical support tailored for Cyberjaya businesses and beyond.
+              </p>
+              
+              <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                <button onclick="navigateTo('services-overview')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-nexus-electric text-nexus-navy font-black text-sm sm:text-base shadow-neon hover:scale-105 transition duration-200 flex items-center justify-center gap-2">
+                  <span>Explore Our Services</span>
+                  <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <button onclick="navigateTo('contact')" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-bold text-sm sm:text-base hover:bg-white/10 border border-slate-700 transition duration-200">
+                  Schedule Tech Audit
+                </button>
+              </div>
+
+              <!-- Quick Trust Metrics -->
+              <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80 text-left">
+                <div>
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-white">99.99%</h4>
+                  <p class="text-xs text-slate-400 font-medium">Uptime Guarantee</p>
+                </div>
+                <div>
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-nexus-electric">&lt; 15 mins</h4>
+                  <p class="text-xs text-slate-400 font-medium">Avg Response Time</p>
+                </div>
+                <div>
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-white">500+</h4>
+                  <p class="text-xs text-slate-400 font-medium">Nodes Monitored</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Graphic Display -->
+            <div class="lg:col-span-5 relative">
+              <div class="glass-card p-6 rounded-2xl relative z-10 border border-nexus-electric/20 shadow-2xl">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-700/60">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <span class="text-xs font-mono text-slate-400">nexus-sys-monitor.v4</span>
+                </div>
+
+                <div class="space-y-4 pt-4">
+                  <div class="p-3 bg-nexus-navy/90 rounded-xl border border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <i data-lucide="shield-check" class="text-emerald-400 w-5 h-5"></i>
+                      <div>
+                        <p class="text-xs font-bold text-white">Network Security Firewall</p>
+                        <p class="text-[10px] text-slate-400">Cyberjaya Datacenter Node</p>
+                      </div>
+                    </div>
+                    <span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded text-[10px] font-bold">Active Shield</span>
+                  </div>
+
+                  <div class="p-3 bg-nexus-navy/90 rounded-xl border border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <i data-lucide="cloud-lightning" class="text-nexus-electric w-5 h-5"></i>
+                      <div>
+                        <p class="text-xs font-bold text-white">Hybrid Cloud Sync</p>
+                        <p class="text-[10px] text-slate-400">AWS / Azure Hybrid Gateway</p>
+                      </div>
+                    </div>
+                    <span class="px-2 py-1 bg-nexus-electric/10 text-nexus-electric rounded text-[10px] font-bold">10 Gbps</span>
+                  </div>
+
+                  <div class="p-3 bg-nexus-navy/90 rounded-xl border border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <i data-lucide="headphones" class="text-nexus-accent w-5 h-5"></i>
+                      <div>
+                        <p class="text-xs font-bold text-white">24/7 Enterprise Helpdesk</p>
+                        <p class="text-[10px] text-slate-400">Live Engineers On-Call</p>
+                      </div>
+                    </div>
+                    <span class="px-2 py-1 bg-nexus-accent/10 text-nexus-accent rounded text-[10px] font-bold">Ready</span>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-slate-800 text-center">
+                  <span class="text-xs text-slate-400">Infrastructure Health Check Status: <strong class="text-emerald-400">Optimal (100%)</strong></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Competencies Section -->
+      <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-xs font-bold tracking-widest text-nexus-electric uppercase mb-2">CORE COMPETENCIES</h2>
+          <h3 class="text-3xl font-extrabold text-white">Three Pillars of Business IT Performance</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric transition-all duration-300 group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-nexus-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                <i data-lucide="headphones" class="text-nexus-electric w-7 h-7"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-3">Managed IT Support &amp; Helpdesk</h4>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">Rapid troubleshooting, remote support, desktop setup, and ongoing hardware maintenance tailored for your daily workflows.</p>
+            </div>
+            <button onclick="navigateTo('service-helpdesk')" class="inline-flex items-center text-nexus-electric font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+              <span>Learn More</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+            </button>
+          </div>
+
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric transition-all duration-300 group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-nexus-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                <i data-lucide="cloud" class="text-nexus-electric w-7 h-7"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-3">Network &amp; Cloud Infrastructure</h4>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">Scalable cloud migration, enterprise Wi-Fi installation, server virtualization, and resilient network architecture design.</p>
+            </div>
+            <button onclick="navigateTo('service-cloud')" class="inline-flex items-center text-nexus-electric font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+              <span>Learn More</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+            </button>
+          </div>
+
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric transition-all duration-300 group flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-nexus-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                <i data-lucide="shield-alert" class="text-nexus-electric w-7 h-7"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-3">Cybersecurity &amp; Data Backup</h4>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">End-to-end data security, ransomware mitigation, virus removal, automated offsite backups, and disaster recovery execution.</p>
+            </div>
+            <button onclick="navigateTo('service-security')" class="inline-flex items-center text-nexus-electric font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+              <span>Learn More</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECTION: ABOUT US -->
+    <div id="page-about" class="page-section hidden">
+      <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-700/70">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+              <span class="text-xs font-extrabold tracking-widest text-nexus-electric uppercase">About Nexus IT Solutions</span>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Your Dedicated Technology Partner in Digital Excellence</h2>
+              <p class="text-slate-300 leading-relaxed">
+                Founded in Cyberjaya, Malaysia, Nexus IT Solutions is a full-spectrum IT services agency dedicated to maintaining robust, secure, and operational systems for high-growth enterprises.
+              </p>
+              <p class="text-slate-300 leading-relaxed">
+                We bridge the gap between complex technological infrastructure and everyday business productivity. By combining proactive management with rapid-response support, we ensure your organization operates without technical bottlenecks.
+              </p>
+              
+              <div class="p-4 bg-nexus-navy/60 rounded-xl border border-slate-800 flex items-start space-x-4">
+                <i data-lucide="check-circle" class="w-6 h-6 text-nexus-electric flex-shrink-0 mt-1"></i>
+                <div>
+                  <h4 class="text-white font-bold text-sm">Certified Engineering Team</h4>
+                  <p class="text-xs text-slate-400">CompTIA Security+, Cisco CCNA, AWS Solutions Architect, and Microsoft Enterprise certified professionals.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white mb-6">Our Core Values</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-5 rounded-2xl bg-nexus-navy/80 border border-slate-800">
+                  <div class="w-10 h-10 rounded-lg bg-nexus-accent/20 flex items-center justify-center mb-3">
+                    <i data-lucide="server" class="text-nexus-electric w-5 h-5"></i>
+                  </div>
+                  <h4 class="text-white font-bold mb-1">Reliability</h4>
+                  <p class="text-xs text-slate-400">Guaranteed systems stability with proactive monitoring and automated failover systems.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-nexus-navy/80 border border-slate-800">
+                  <div class="w-10 h-10 rounded-lg bg-nexus-accent/20 flex items-center justify-center mb-3">
+                    <i data-lucide="lock" class="text-nexus-electric w-5 h-5"></i>
+                  </div>
+                  <h4 class="text-white font-bold mb-1">24/7 Security</h4>
+                  <p class="text-xs text-slate-400">Uncompromising threat detection around the clock safeguarding your critical enterprise assets.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-nexus-navy/80 border border-slate-800">
+                  <div class="w-10 h-10 rounded-lg bg-nexus-accent/20 flex items-center justify-center mb-3">
+                    <i data-lucide="zap" class="text-nexus-electric w-5 h-5"></i>
+                  </div>
+                  <h4 class="text-white font-bold mb-1">Fast Response</h4>
+                  <p class="text-xs text-slate-400">Strict Service Level Agreements (SLAs) guaranteeing rapid resolution times.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-nexus-navy/80 border border-slate-800">
+                  <div class="w-10 h-10 rounded-lg bg-nexus-accent/20 flex items-center justify-center mb-3">
+                    <i data-lucide="users" class="text-nexus-electric w-5 h-5"></i>
+                  </div>
+                  <h4 class="text-white font-bold mb-1">Client Focus</h4>
+                  <p class="text-xs text-slate-400">Customized technology strategies that align with your specific commercial objectives.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECTION: OUR TEAM -->
+    <div id="page-team" class="page-section hidden">
+      <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest text-nexus-electric uppercase">Meet Our Team</span>
+          <h2 class="text-4xl font-extrabold text-white mt-2">The Minds Behind Nexus IT Solutions</h2>
+          <p class="text-slate-300 mt-4">A dedicated team of certified technology experts, engineers, and specialists committed to delivering zero-downtime solutions.</p>
+        </div>
+
+        <!-- Team Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Member 1: Tan Ye Jun -->
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
+            <!-- Profile Avatar with dynamic gradient -->
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-accent flex items-center justify-center mb-6 shadow-neon relative overflow-hidden group-hover:scale-105 transition-all duration-300">
+              <span class="text-nexus-navy text-2xl font-black">TY</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Tan Ye Jun</h3>
+            <span class="text-xs text-nexus-electric font-semibold uppercase tracking-wider mb-3">Chief Executive Officer (CEO)</span>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Driving strategic development, growth, and client alignment for enterprise-grade digital transformation.
+            </p>
+          </div>
+
+          <!-- Member 2: Hong Quan Hao -->
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-accent flex items-center justify-center mb-6 shadow-neon relative overflow-hidden group-hover:scale-105 transition-all duration-300">
+              <span class="text-nexus-navy text-2xl font-black">HQ</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Hong Quan Hao</h3>
+            <span class="text-xs text-nexus-electric font-semibold uppercase tracking-wider mb-3">Chief Technology Officer (CTO)</span>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Overseeing platform architecture, technological innovations, and core systems operations.
+            </p>
+          </div>
+
+          <!-- Member 3: Fan Chong Bao -->
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-accent flex items-center justify-center mb-6 shadow-neon relative overflow-hidden group-hover:scale-105 transition-all duration-300">
+              <span class="text-nexus-navy text-2xl font-black">FC</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Fan Chong Bao</h3>
+            <span class="text-xs text-nexus-electric font-semibold uppercase tracking-wider mb-3">Lead Cloud Architect</span>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Designing scalable virtual network architectures, multi-cloud structures, and server migrations.
+            </p>
+          </div>
+
+          <!-- Member 4: Tan Khai Zhen -->
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-accent flex items-center justify-center mb-6 shadow-neon relative overflow-hidden group-hover:scale-105 transition-all duration-300">
+              <span class="text-nexus-navy text-2xl font-black">TK</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Tan Khai Zhen</h3>
+            <span class="text-xs text-nexus-electric font-semibold uppercase tracking-wider mb-3">Head of Cybersecurity</span>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Managing threat detection, penetration testing, compliance auditing, and secure endpoints.
+            </p>
+          </div>
+
+          <!-- Member 5: Chang Yu Hang -->
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-accent flex items-center justify-center mb-6 shadow-neon relative overflow-hidden group-hover:scale-105 transition-all duration-300">
+              <span class="text-nexus-navy text-2xl font-black">CY</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Chang Yu Hang</h3>
+            <span class="text-xs text-nexus-electric font-semibold uppercase tracking-wider mb-3">Lead Infrastructure Engineer</span>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Configuring enterprise routing, server virtualization, and disaster recovery replication.
+            </p>
+          </div>
+
+          <!-- Member 6: Yong Xiang Yu -->
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/50 hover:border-nexus-electric hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-accent flex items-center justify-center mb-6 shadow-neon relative overflow-hidden group-hover:scale-105 transition-all duration-300">
+              <span class="text-nexus-navy text-2xl font-black">YX</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">Yong Xiang Yu</h3>
+            <span class="text-xs text-nexus-electric font-semibold uppercase tracking-wider mb-3">Senior Systems Specialist</span>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Providing Tier 3 technical support, workstation provisioning, and remote client troubleshooting.
+            </p>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- SECTION: SERVICES OVERVIEW -->
+    <div id="page-services-overview" class="page-section hidden">
+      <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest text-nexus-electric uppercase">Comprehensive IT Capabilities</span>
+          <h2 class="text-4xl font-extrabold text-white mt-2">Tailored IT Services for Every Scale</h2>
+          <p class="text-slate-300 mt-4">Select a specialized service category below to explore technical specs, deliverables, and service options.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/60 hover:border-nexus-electric transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 bg-nexus-accent/20 rounded-xl flex items-center justify-center mb-4 text-nexus-electric">
+                <i data-lucide="headphones" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Managed IT Support &amp; Helpdesk</h3>
+              <p class="text-slate-300 text-sm mb-6">Complete desktop management, remote technician support, workstation provisioning, and IT ticketing system management.</p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Tier 1 - Tier 3 Ticket Resolution</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>On-site &amp; Remote Diagnostics</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Hardware Repairs &amp; Upgrades</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="navigateTo('service-helpdesk')" class="w-full py-3 bg-nexus-accent text-white font-bold rounded-xl hover:bg-nexus-electric hover:text-nexus-navy transition">
+              View Dedicated Page
+            </button>
+          </div>
+
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/60 hover:border-nexus-electric transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 bg-nexus-accent/20 rounded-xl flex items-center justify-center mb-4 text-nexus-electric">
+                <i data-lucide="cloud" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Network &amp; Cloud Infrastructure</h3>
+              <p class="text-slate-300 text-sm mb-6">Design, build, and optimize enterprise networks, enterprise Wi-Fi systems, and seamless multi-cloud migrations.</p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>AWS/Azure Hybrid Cloud Setup</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>High-Speed Mesh Wi-Fi Config</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>VPN &amp; Remote Access Infrastructure</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="navigateTo('service-cloud')" class="w-full py-3 bg-nexus-accent text-white font-bold rounded-xl hover:bg-nexus-electric hover:text-nexus-navy transition">
+              View Dedicated Page
+            </button>
+          </div>
+
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/60 hover:border-nexus-electric transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 bg-nexus-accent/20 rounded-xl flex items-center justify-center mb-4 text-nexus-electric">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Cybersecurity &amp; Data Backup</h3>
+              <p class="text-slate-300 text-sm mb-6">Proactive threat hunting, real-time antivirus monitoring, disaster recovery blueprints, and immutable cloud backups.</p>
+              
+              <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Ransomware &amp; Malware Prevention</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>15-Minute Automated Backups</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Compliance Audits &amp; Security Training</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="navigateTo('service-security')" class="w-full py-3 bg-nexus-accent text-white font-bold rounded-xl hover:bg-nexus-electric hover:text-nexus-navy transition">
+              View Dedicated Page
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- DEDICATED SERVICE 1: HELPDESK & SUPPORT -->
+    <div id="page-service-helpdesk" class="page-section hidden">
+      <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <button onclick="navigateTo('services-overview')" class="text-xs text-nexus-electric hover:underline flex items-center gap-1 mb-2">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back to All Services</span>
+          </button>
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white">Managed IT Support &amp; Helpdesk</h1>
+          <p class="text-slate-300 mt-2 text-lg">Continuous employee workstation support, hardware procurement, software deployment, and active ticket management.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-8">
+            <div class="glass-card p-8 rounded-2xl">
+              <h2 class="text-2xl font-bold text-white mb-4">Service Capabilities Overview</h2>
+              <p class="text-slate-300 leading-relaxed mb-6">
+                Unplanned technical glitches disrupt operations and drain team productivity. Nexus IT Solutions provides a dedicated Helpdesk ecosystem acting as your virtual in-house IT department.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Desktop &amp; Device Setup</h4>
+                  <p class="text-xs text-slate-300">Provisioning laptops, workstations, printers, and peripherals with pre-configured software images.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">24/7 Remote Desktop Support</h4>
+                  <p class="text-xs text-slate-300">Instant remote access troubleshooting for OS updates, email configuration, and software errors.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">On-Site Dispatch</h4>
+                  <p class="text-xs text-slate-300">Physical technician visits across Cyberjaya and Klang Valley for hardware maintenance.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Patch &amp; Asset Management</h4>
+                  <p class="text-xs text-slate-300">Centralized software licensing, patch deployments, and hardware life-cycle tracking.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl">
+              <h2 class="text-2xl font-bold text-white mb-6">How Our Helpdesk Works</h2>
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 rounded-full bg-nexus-electric text-nexus-navy flex items-center justify-center font-bold flex-shrink-0">1</div>
+                  <div>
+                    <h4 class="font-bold text-white">Issue Submission</h4>
+                    <p class="text-xs text-slate-300">Employees submit tickets via portal, email, or direct hotline.</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 rounded-full bg-nexus-electric text-nexus-navy flex items-center justify-center font-bold flex-shrink-0">2</div>
+                  <div>
+                    <h4 class="font-bold text-white">Triaging &amp; Rapid Diagnostic</h4>
+                    <p class="text-xs text-slate-300">Tier 1 engineers acknowledge within 15 minutes and initiate remote session.</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 rounded-full bg-nexus-electric text-nexus-navy flex items-center justify-center font-bold flex-shrink-0">3</div>
+                  <div>
+                    <h4 class="font-bold text-white">Resolution &amp; Documentation</h4>
+                    <p class="text-xs text-slate-300">The issue is fixed, documented in your company tech logbook, and verified by the user.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="glass-card p-6 rounded-2xl border border-nexus-electric/30">
+              <h3 class="text-xl font-bold text-white mb-4">Request Support Spec</h3>
+              <p class="text-xs text-slate-300 mb-6">Need immediate helpdesk support for your office workstations?</p>
+              <button onclick="navigateTo('contact')" class="w-full py-3 bg-nexus-electric text-nexus-navy font-bold rounded-xl shadow-neon hover:scale-105 transition">
+                Talk to Helpdesk Specialist
+              </button>
+            </div>
+
+            <div class="p-6 bg-nexus-dark/90 rounded-2xl border border-slate-800">
+              <h4 class="font-bold text-white text-sm mb-3">Service Guarantees</h4>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-center">
+                  <i data-lucide="shield" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>SLA Response: Under 15 Min</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="shield" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>First Contact Resolution: &gt;85%</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="shield" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Certified Microsoft Engineers</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- DEDICATED SERVICE 2: NETWORK & CLOUD -->
+    <div id="page-service-cloud" class="page-section hidden">
+      <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <button onclick="navigateTo('services-overview')" class="text-xs text-nexus-electric hover:underline flex items-center gap-1 mb-2">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back to All Services</span>
+          </button>
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white">Network &amp; Cloud Infrastructure</h1>
+          <p class="text-slate-300 mt-2 text-lg">Architecting resilient, high-bandwidth networks, enterprise Wi-Fi deployments, and multi-cloud server setups.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-8">
+            <div class="glass-card p-8 rounded-2xl">
+              <h2 class="text-2xl font-bold text-white mb-4">Cloud &amp; Connectivity Solutions</h2>
+              <p class="text-slate-300 leading-relaxed mb-6">
+                Modern growth requires seamless connectivity and elastic infrastructure. We design cloud migrations and office network topologies configured for maximum throughput and zero downtime.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Cloud Migration (AWS/Azure)</h4>
+                  <p class="text-xs text-slate-300">Transitioning legacy physical servers into secure cloud computing environments.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Enterprise Mesh Wi-Fi</h4>
+                  <p class="text-xs text-slate-300">High-density wireless access points with seamless roaming across corporate buildings.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Server Setup &amp; Virtualization</h4>
+                  <p class="text-xs text-slate-300">VMware/Hyper-V virtualization, SAN storage management, and rack configurations.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">SD-WAN &amp; Site VPN</h4>
+                  <p class="text-xs text-slate-300">Encrypted site-to-site VPN tunnels for multi-office location connectivity.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl">
+              <h2 class="text-2xl font-bold text-white mb-4">Infrastructure Design Standards</h2>
+              <div class="p-6 bg-nexus-navy/90 rounded-xl border border-slate-800 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <span class="text-xs font-bold text-white">Redundancy Configuration</span>
+                  <span class="text-xs text-nexus-electric">Dual ISP Failover Automatic Switch</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <span class="text-xs font-bold text-white">Network Throughput Optimization</span>
+                  <span class="text-xs text-nexus-electric">Cat6A / Fiber Backbone Deployment</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-white">Security Isolation</span>
+                  <span class="text-xs text-nexus-electric">VLAN Segmentation for Guest &amp; Corporate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="glass-card p-6 rounded-2xl border border-nexus-electric/30">
+              <h3 class="text-xl font-bold text-white mb-4">Plan Cloud Migration</h3>
+              <p class="text-xs text-slate-300 mb-6">Want to migrate your physical server room into AWS or Azure cloud?</p>
+              <button onclick="navigateTo('contact')" class="w-full py-3 bg-nexus-electric text-nexus-navy font-bold rounded-xl shadow-neon hover:scale-105 transition">
+                Request Network Audit
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- DEDICATED SERVICE 3: CYBERSECURITY & BACKUP -->
+    <div id="page-service-security" class="page-section hidden">
+      <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <button onclick="navigateTo('services-overview')" class="text-xs text-nexus-electric hover:underline flex items-center gap-1 mb-2">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back to All Services</span>
+          </button>
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white">Cybersecurity &amp; Data Backup</h1>
+          <p class="text-slate-300 mt-2 text-lg">Next-generation threat protection, malware eradication, immutable data backups, and disaster recovery execution.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-8">
+            <div class="glass-card p-8 rounded-2xl">
+              <h2 class="text-2xl font-bold text-white mb-4">Enterprise Protection Ecosystem</h2>
+              <p class="text-slate-300 leading-relaxed mb-6">
+                Cyber threats evolve daily. Nexus IT Solutions deploys multi-layered protection systems that defend endpoints, monitor network anomaly behavior, and back up mission-critical databases.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Ransomware Protection</h4>
+                  <p class="text-xs text-slate-300">Behavioral threat isolation blocking unauthorized encryption attempts.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Automated 3-2-1 Backups</h4>
+                  <p class="text-xs text-slate-300">3 copies of data, 2 different media, 1 offsite encrypted datacenter location.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Virus &amp; Malware Removal</h4>
+                  <p class="text-xs text-slate-300">Immediate containment, deep cleaning, and root-cause security vulnerability remediation.</p>
+                </div>
+                <div class="p-4 bg-nexus-navy/80 rounded-xl border border-slate-800">
+                  <h4 class="font-bold text-nexus-electric text-sm mb-1">Disaster Recovery (DR)</h4>
+                  <p class="text-xs text-slate-300">Near-zero Recovery Time Objective (RTO) restoring complete server images within minutes.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl border border-red-500/20">
+              <h2 class="text-xl font-bold text-white mb-4">Quick Cybersecurity Health Check</h2>
+              <p class="text-xs text-slate-300 mb-4">Check if your organization is at risk for data loss:</p>
+              <div class="space-y-3">
+                <label class="flex items-center space-x-3 text-xs text-slate-300 cursor-pointer">
+                  <input type="checkbox" class="form-checkbox text-nexus-electric rounded bg-nexus-navy" />
+                  <span>Do you store backups in a location separated from your main office network?</span>
+                </label>
+                <label class="flex items-center space-x-3 text-xs text-slate-300 cursor-pointer">
+                  <input type="checkbox" class="form-checkbox text-nexus-electric rounded bg-nexus-navy" />
+                  <span>Is Multi-Factor Authentication (MFA) enforced on all company email accounts?</span>
+                </label>
+                <label class="flex items-center space-x-3 text-xs text-slate-300 cursor-pointer">
+                  <input type="checkbox" class="form-checkbox text-nexus-electric rounded bg-nexus-navy" />
+                  <span>Have your employees received anti-phishing training in the past 6 months?</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="glass-card p-6 rounded-2xl border border-nexus-electric/30">
+              <h3 class="text-xl font-bold text-white mb-4">Secure Your Systems</h3>
+              <p class="text-xs text-slate-300 mb-6">Schedule a full vulnerability scan and backup strategy session.</p>
+              <button onclick="navigateTo('contact')" class="w-full py-3 bg-nexus-electric text-nexus-navy font-bold rounded-xl shadow-neon hover:scale-105 transition">
+                Request Cyber Shield Audit
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECTION: PRICING & SLA PLANS -->
+    <div id="page-pricing" class="page-section hidden">
+      <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest text-nexus-electric uppercase">Service Level Agreements</span>
+          <h2 class="text-4xl font-extrabold text-white mt-2">Flexible SLA &amp; Support Packages</h2>
+          <p class="text-slate-300 mt-4">Transparent monthly IT support tailored to your team size and infrastructure complexity.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/60 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Essential</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Core Desk</h3>
+              <div class="my-4">
+                <span class="text-3xl font-extrabold text-white">RM 1,500</span>
+                <span class="text-xs text-slate-400">/ month</span>
+              </div>
+              <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Up to 15 Workstations Supported</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Business Hours Helpdesk (8am-6pm)</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Antivirus &amp; Endpoint Patching</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Monthly Health Report</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="navigateTo('contact')" class="w-full py-3 bg-nexus-dark hover:bg-nexus-accent text-white font-bold rounded-xl transition">
+              Select Plan
+            </button>
+          </div>
+
+          <div class="glass-card p-8 rounded-2xl border-2 border-nexus-electric flex flex-col justify-between relative shadow-neon">
+            <span class="absolute -top-3 right-6 bg-nexus-electric text-nexus-navy font-extrabold text-[10px] px-3 py-1 rounded-full uppercase">Most Popular</span>
+            <div>
+              <span class="text-xs font-bold text-nexus-electric uppercase tracking-widest">Growth</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Enterprise Shield</h3>
+              <div class="my-4">
+                <span class="text-3xl font-extrabold text-white">RM 3,800</span>
+                <span class="text-xs text-slate-400">/ month</span>
+              </div>
+              <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Up to 40 Workstations Supported</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>24/7 Priority Emergency Helpdesk</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Cloud Server Management (AWS/Azure)</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Daily Encrypted Cloud Backups</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>On-Site Dispatch (Within 2 Hours)</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="navigateTo('contact')" class="w-full py-3 bg-nexus-electric text-nexus-navy font-bold rounded-xl transition">
+              Select Plan
+            </button>
+          </div>
+
+          <div class="glass-card p-8 rounded-2xl border border-slate-700/60 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Custom</span>
+              <h3 class="text-2xl font-bold text-white mt-2">Corporate Cloud</h3>
+              <div class="my-4">
+                <span class="text-3xl font-extrabold text-white">Custom</span>
+              </div>
+              <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Unlimited Workstations &amp; Servers</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Dedicated Lead IT Engineer</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Complete Disaster Recovery Site</span>
+                </li>
+                <li class="flex items-center">
+                  <i data-lucide="check" class="w-4 h-4 text-nexus-electric mr-2"></i>
+                  <span>Quarterly IT Roadmap &amp; Audits</span>
+                </li>
+              </ul>
+            </div>
+            <button onclick="navigateTo('contact')" class="w-full py-3 bg-nexus-dark hover:bg-nexus-accent text-white font-bold rounded-xl transition">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECTION: IT CALCULATOR -->
+    <div id="page-calc" class="page-section hidden">
+      <section class="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card p-8 rounded-3xl border border-nexus-electric/30">
+          <h2 class="text-3xl font-extrabold text-white mb-2 text-center">Interactive IT SLA Estimator</h2>
+          <p class="text-xs text-slate-300 text-center mb-8">Calculate your estimated monthly IT service cost instantly.</p>
+
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm font-bold text-white mb-2">
+                Number of Office Workstations / Users:
+                <span id="calc-users-val" class="text-nexus-electric">20</span>
+              </label>
+              <input type="range" id="calc-users" min="5" max="150" value="20" class="w-full accent-nexus-electric bg-nexus-navy" oninput="calculateCost()" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-white mb-2">
+                Physical or Cloud Servers:
+                <span id="calc-servers-val" class="text-nexus-electric">2</span>
+              </label>
+              <input type="range" id="calc-servers" min="0" max="20" value="2" class="w-full accent-nexus-electric bg-nexus-navy" oninput="calculateCost()" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <label class="flex items-center space-x-3 p-3 bg-nexus-navy/60 rounded-xl border border-slate-800 cursor-pointer">
+                <input type="checkbox" id="calc-247" class="form-checkbox text-nexus-electric rounded" onchange="calculateCost()" />
+                <span class="text-xs text-white">24/7 Priority Emergency Support</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 bg-nexus-navy/60 rounded-xl border border-slate-800 cursor-pointer">
+                <input type="checkbox" id="calc-backup" class="form-checkbox text-nexus-electric rounded" checked onchange="calculateCost()" />
+                <span class="text-xs text-white">Automated Offsite Cloud Backup</span>
+              </label>
+            </div>
+
+            <div class="mt-8 p-6 bg-nexus-navy rounded-2xl border border-slate-700 text-center">
+              <span class="text-xs uppercase font-bold text-slate-400">Estimated Monthly Managed Service</span>
+              <div class="text-4xl sm:text-5xl font-extrabold text-nexus-electric my-2" id="calc-total">RM 2,400</div>
+              <span class="text-[10px] text-slate-400">*Final price subject to infrastructure audit.</span>
+            </div>
+
+            <button onclick="navigateTo('contact')" class="w-full py-4 bg-nexus-electric text-nexus-navy font-bold rounded-xl shadow-neon hover:scale-105 transition">
+              Lock In This Estimate &amp; Book Audit
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECTION: CONTACT US -->
+    <div id="page-contact" class="page-section hidden">
+      <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest text-nexus-electric uppercase">Get In Touch</span>
+          <h2 class="text-4xl font-extrabold text-white mt-2">Connect with Nexus IT Engineers</h2>
+          <p class="text-slate-300 mt-4">Have an inquiry or experiencing system issues? Reach out to our Cyberjaya headquarters.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-7 glass-card p-8 rounded-3xl border border-slate-700/60">
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Your Name</label>
+                  <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-nexus-navy/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-nexus-electric" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Email Address</label>
+                  <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-xl bg-nexus-navy/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-nexus-electric" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Service Required</label>
+                <select class="w-full px-4 py-3 rounded-xl bg-nexus-navy/90 border border-slate-700 text-white focus:outline-none focus:border-nexus-electric">
+                  <option>Managed IT Support &amp; Helpdesk</option>
+                  <option>Network &amp; Cloud Infrastructure</option>
+                  <option>Cybersecurity &amp; Data Backup</option>
+                  <option>General IT Consultation</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Message Details</label>
+                <textarea rows="4" required placeholder="Describe your technical requirements or system issues..." class="w-full px-4 py-3 rounded-xl bg-nexus-navy/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-nexus-electric"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-nexus-electric text-nexus-navy font-extrabold shadow-neon hover:scale-[1.01] transition duration-200">
+                Send Message to IT Support
+              </button>
+            </form>
+
+            <div id="form-alert" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/20 border border-emerald-500 text-emerald-300 text-xs font-bold text-center">
+              Thank you! Your inquiry has been sent to support@nexusitsolutions.com. An engineer will reply within 15 minutes.
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 space-y-6">
+            <div class="glass-card p-8 rounded-3xl border border-slate-700/60 space-y-6">
+              <h3 class="text-2xl font-bold text-white">Direct Contact Details</h3>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-nexus-accent/20 flex items-center justify-center flex-shrink-0 text-nexus-electric">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-semibold">Support Email</span>
+                  <a href="mailto:support@nexusitsolutions.com" class="text-sm font-bold text-white hover:text-nexus-electric transition">support@nexusitsolutions.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-nexus-accent/20 flex items-center justify-center flex-shrink-0 text-nexus-electric">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-semibold">Headquarters Location</span>
+                  <p class="text-sm font-bold text-white">Cyberjaya, Selangor, Malaysia</p>
+                  <p class="text-xs text-slate-400">Tech Innovation Zone 1</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-nexus-accent/20 flex items-center justify-center flex-shrink-0 text-nexus-electric">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-semibold">24/7 Support Hotline</span>
+                  <p class="text-sm font-bold text-white">+60 (3) 8000-NEXUS</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl border border-slate-700/60 text-center">
+              <div class="w-full h-40 bg-nexus-navy rounded-2xl flex flex-col items-center justify-center border border-slate-800">
+                <i data-lucide="globe" class="w-10 h-10 text-nexus-electric mb-2"></i>
+                <span class="text-xs font-bold text-white">Cyberjaya Tech Campus Hub</span>
+                <span class="text-[10px] text-slate-400">Regional Datacenter Operations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-nexus-navy border-t border-slate-800/80 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+        <div class="space-y-4">
+          <!-- Brand Logo (Enlarged) -->
+          <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+            <img 
+              src="Test_ver-removebg-preview.png" 
+              alt="Nexus Logo" 
+              class="h-14 sm:h-16 w-auto object-contain"
+              onerror="this.style.display='none'"
+            />
+            <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase">
+              IT SUPPORT
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Reliable Managed IT Services &amp; Security Infrastructure tailored for high-growth modern enterprise operations.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Quick Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#" onclick="navigateTo('home'); return false;" class="hover:text-nexus-electric">Home</a></li>
+            <li><a href="#" onclick="navigateTo('about'); return false;" class="hover:text-nexus-electric">About Us</a></li>
+            <li><a href="#" onclick="navigateTo('team'); return false;" class="hover:text-nexus-electric">Our Team</a></li>
+            <li><a href="#" onclick="navigateTo('pricing'); return false;" class="hover:text-nexus-electric">SLA Pricing Plans</a></li>
+            <li><a href="#" onclick="navigateTo('calc'); return false;" class="hover:text-nexus-electric">IT Cost Estimator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Dedicated Services</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#" onclick="navigateTo('service-helpdesk'); return false;" class="hover:text-nexus-electric">Managed Support &amp; Helpdesk</a></li>
+            <li><a href="#" onclick="navigateTo('service-cloud'); return false;" class="hover:text-nexus-electric">Network &amp; Cloud Infrastructure</a></li>
+            <li><a href="#" onclick="navigateTo('service-security'); return false;" class="hover:text-nexus-electric">Cybersecurity &amp; Data Backup</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Connect With Us</h4>
+          <p class="text-xs text-slate-400 mb-4">Cyberjaya, Malaysia</p>
+          <div class="flex space-x-4">
+            <a href="https://www.instagram.com/nexus.itservice?utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-nexus-dark border border-slate-700 flex items-center justify-center text-slate-300 hover:text-nexus-electric hover:border-nexus-electric transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" onclick="navigateTo('contact'); return false;" class="w-10 h-10 rounded-xl bg-nexus-dark border border-slate-700 flex items-center justify-center text-slate-300 hover:text-nexus-electric hover:border-nexus-electric transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <p>© 2026 Nexus IT Solutions. All rights reserved. Built for enterprise reliability.</p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <span class="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
+          <span class="hover:text-slate-400 cursor-pointer">Terms of Service</span>
+          <span class="hover:text-slate-400 cursor-pointer">Security Brief</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // SPA Navigation Router
+    function navigateTo(pageId) {
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.add('hidden'));
+
+      const target = document.getElementById(`page-${pageId}`);
+      if (target) {
+        target.classList.remove('hidden');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('text-nexus-electric');
+        btn.classList.add('text-gray-300');
+      });
+
+      const activeBtn = document.getElementById(`nav-${pageId}`);
+      if (activeBtn) {
+        activeBtn.classList.add('text-nexus-electric');
+        activeBtn.classList.remove('text-gray-300');
+      }
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Form Submit Simulation
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const alertBox = document.getElementById('form-alert');
+      alertBox.classList.remove('hidden');
+      document.getElementById('contact-form').reset();
+      setTimeout(() => {
+        alertBox.classList.add('hidden');
+      }, 6000);
+    }
+
+    // Interactive Cost Calculator
+    function calculateCost() {
+      const users = parseInt(document.getElementById('calc-users').value);
+      const servers = parseInt(document.getElementById('calc-servers').value);
+      const is247 = document.getElementById('calc-247').checked;
+      const isBackup = document.getElementById('calc-backup').checked;
+
+      document.getElementById('calc-users-val').innerText = users;
+      document.getElementById('calc-servers-val').innerText = servers;
+
+      let baseCost = (users * 60) + (servers * 400);
+      if (is247) baseCost += 800;
+      if (isBackup) baseCost += 400;
+
+      document.getElementById('calc-total').innerText = `RM ${baseCost.toLocaleString()}`;
+    }
+  </script>
+</body>
+</html>
