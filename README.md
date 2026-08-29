@@ -22,8 +22,8 @@ Nexus is an IT service that delivers proactive, enterprise-grade IT management a
 
 ## 👥 Our Team
 
-| Member | Role & Responsibilities | Core Focus & Quote |
-| :--- | :--- | :--- |
+| Member | Role & Responsibilities |
+| :--- | :--- | 
 | **Tan Ye Jun** | **Chief Executive Officer (CEO)** |
 | **Hong Quan Hao** | **Chief Technology Officer (CTO)** | 
 | **Fan Chong Bao** | **Chief Information Security Officer (CISO)**| 
